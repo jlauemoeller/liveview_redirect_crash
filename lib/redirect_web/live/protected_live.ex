@@ -1,11 +1,11 @@
-defmodule RedirectWeb.PageLive do
+defmodule RedirectWeb.ProtectedLive do
   use RedirectWeb, :live_view
 
   @impl true
   def render(assigns) do
     ~L"""
-      <h1>Landing Page</h1>
-      <%= live_redirect "Protected", to: Routes.protected_path(@socket, :index) %>
+      <h1>Protected</h1>
+      <%= link "Logout", to: Routes.session_path(RedirectWeb.Endpoint, :logout), method: :post %>
     """
   end
 

@@ -4,6 +4,14 @@ defmodule RedirectWeb.LoginLive do
   alias Phoenix.Token
 
   @impl true
+  def render(assigns) do
+    ~L"""
+    <h1>Please Log in</h1>
+    <a phx-click="login">Simulate log in</a>
+    """
+  end
+
+  @impl true
   def mount(_params, _session, socket) do
     {:ok, socket}
   end
